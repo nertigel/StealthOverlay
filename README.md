@@ -1,4 +1,4 @@
-![garbage](https://img.shields.io/badge/STEALTH-OVERLAY-red)
+![cppi](https://img.shields.io/github/languages/top/nertigel/StealthOverlay) ![Windows](https://img.shields.io/badge/Windows-11-cyan) ![dx11](https://img.shields.io/badge/DirectX-11-red)
 
 # StealthOverlay - an ImGui external overlay
 A stealthy C++ ImGui menu overlay - a great base for externals or various tools that require a graphical interface.
