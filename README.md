@@ -2,10 +2,10 @@
 
 # StealthOverlay - external DirectX11 ImGui overlay
 A stealthy C++ ImGui menu overlay - a great base for externals or various tools that require a graphical interface.
-Includes anti capture against screen recorders such as OBS, Medal, etc.
 
 # Libraries
 - ImGui ([imgui-1.91.9b](https://github.com/ocornut/imgui/tree/v1.91.9b))
+- [DirectX Software Development Kit](https://www.microsoft.com/en-us/download/details.aspx?id=6812)
 - DirectX11
 
 # Credits
