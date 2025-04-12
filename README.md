@@ -4,6 +4,7 @@
 
 A stealthy C++ ImGui menu overlay - a great base for externals or various tools that require a graphical interface.
 Includes full project files for easier compilation of the executable.
+![demo](image.png)
 
 # Libraries
 - ImGui ([imgui-1.91.9b](https://github.com/ocornut/imgui/tree/v1.91.9b))
