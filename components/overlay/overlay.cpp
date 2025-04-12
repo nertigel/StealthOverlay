@@ -13,9 +13,9 @@ typedef HWND(WINAPI* CreateWindowInBand)(_In_ DWORD dwExStyle, _In_opt_ ATOM ato
 void Overlay::register_console_window() {
     AllocConsole();
     FILE* dummy; // c++ autism
-    freopen_s(&dummy, ("CONIN$"), ("r"), stdin);
-    freopen_s(&dummy, ("CONOUT$"), ("w"), stderr);
-    freopen_s(&dummy, ("CONOUT$"), ("w"), stdout);
+    freopen_s(&dummy, xorstr_("CONIN$"), xorstr_("r"), stdin);
+    freopen_s(&dummy, xorstr_("CONOUT$"), xorstr_("w"), stderr);
+    freopen_s(&dummy, xorstr_("CONOUT$"), xorstr_("w"), stdout);
 }
 
 // Initialize Direct3D
@@ -96,7 +96,7 @@ LRESULT CALLBACK Overlay::WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lPa
 void Overlay::setup_window()
 {
     CoInitializeEx(NULL, COINIT_APARTMENTTHREADED | COINIT_DISABLE_OLE1DDE);
-    HMODULE user32_lla = LoadLibraryA(("user32.dll"));
+    HMODULE user32_lla = LoadLibraryA(xorstr_("user32.dll"));
     CreateWindowInBand pCreateWindowInBand = reinterpret_cast<CreateWindowInBand>(GetProcAddress(user32_lla, xorstr_("CreateWindowInBand")));
     PrepareForUIAccess();
 
