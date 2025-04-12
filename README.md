@@ -8,7 +8,7 @@ Includes full project files for easier compilation of the executable.
 
 # Features
 - Streamproof, not visible in screenshots and screen recorders such as OBS, Medal & more
-- Displayed over any application, thanks to `uiaccess`
+- Draws over any games/application, thanks to `uiaccess`
 
 # Libraries
 - ImGui ([imgui-1.91.9b](https://github.com/ocornut/imgui/tree/v1.91.9b))
