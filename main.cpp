@@ -6,6 +6,7 @@
 
 #include "components/overlay/overlay.hpp"
 #include "components/hooks/keyboard.hpp"
+#include <components/security/xorstr.hpp>
 
 // application entry
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int) {
@@ -14,7 +15,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int) {
 
     // hook
     hKeyboardHook = SetWindowsHookEx(WH_KEYBOARD_LL, cKeyboardHook, NULL, 0);
-    std::cout << ("hKeyboardHook hooked") << std::endl;
+    std::cout << xorstr_("hKeyboardHook hooked") << std::endl;
 
     // render
     overlay_class.setup_window();
