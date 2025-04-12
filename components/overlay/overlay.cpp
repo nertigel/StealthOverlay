@@ -1,4 +1,6 @@
+// https://github.com/nertigel/StealthOverlay
 #include "overlay.hpp"
+
 #include <components/ui_access/ui_access.hpp>
 #include <components/imgui/imgui_internal.h>
 #include <components/render/render.hpp>
@@ -10,10 +12,10 @@ typedef HWND(WINAPI* CreateWindowInBand)(_In_ DWORD dwExStyle, _In_opt_ ATOM ato
 
 void Overlay::register_console_window() {
     AllocConsole();
-    FILE* fDummy; // c++ autism
-    freopen_s(&fDummy, ("CONIN$"), ("r"), stdin);
-    freopen_s(&fDummy, ("CONOUT$"), ("w"), stderr);
-    freopen_s(&fDummy, ("CONOUT$"), ("w"), stdout);
+    FILE* dummy; // c++ autism
+    freopen_s(&dummy, ("CONIN$"), ("r"), stdin);
+    freopen_s(&dummy, ("CONOUT$"), ("w"), stderr);
+    freopen_s(&dummy, ("CONOUT$"), ("w"), stdout);
 }
 
 // Initialize Direct3D
@@ -148,11 +150,11 @@ void Overlay::begin_render() {
         }
 
         if (GetAsyncKeyState(VK_F4) & 1) {
-            if (g_Window.isOpen == false) {
-                SetWindowLong(g_Window.hWnd, GWL_EXSTYLE, WS_EX_TOPMOST | WS_EX_TRANSPARENT | WS_EX_NOACTIVATE);
+            if (g_Window.isOpen) {
+                SetWindowLong(g_Window.hWnd, GWL_EXSTYLE, WS_EX_TOPMOST | WS_EX_LAYERED | WS_EX_TOOLWINDOW | WS_EX_TRANSPARENT);
             }
             else {
-                SetWindowLong(g_Window.hWnd, GWL_EXSTYLE, WS_EX_TOPMOST | WS_EX_LAYERED | WS_EX_TOOLWINDOW | WS_EX_TRANSPARENT);
+                SetWindowLong(g_Window.hWnd, GWL_EXSTYLE, WS_EX_TOPMOST | WS_EX_TRANSPARENT | WS_EX_NOACTIVATE);
             }
             ShowWindow(g_Window.hWnd, g_Window.isOpen ? SW_HIDE : SW_SHOWDEFAULT);
             UpdateWindow(g_Window.hWnd);
@@ -160,7 +162,7 @@ void Overlay::begin_render() {
         }
 
         static float background_alpha = 0.f;
-        background_alpha = ImLerp(background_alpha, g_Window.isOpen ? 1.f : 0.f, ImGui::GetIO().DeltaTime * 8);
+        background_alpha = ImLerp(background_alpha, g_Window.isOpen ? 1.f : 0.f, ImGui::GetIO().DeltaTime * 5);
 
         ImGui_ImplDX11_NewFrame();
         ImGui_ImplWin32_NewFrame();

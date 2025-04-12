@@ -1,3 +1,4 @@
+// https://github.com/nertigel/StealthOverlay
 #pragma once
 #include <Windows.h>
 #include "..\globals.hpp"
@@ -5,13 +6,9 @@
 inline HHOOK hKeyboardHook;
 inline LRESULT CALLBACK cKeyboardHook(int nCode, WPARAM wParam, LPARAM lParam)
 {
-	if (nCode == 0)
+	if (nCode == 0 && g_Window.isOpen)
 	{
 		KBDLLHOOKSTRUCT* pKeyboard = (KBDLLHOOKSTRUCT*)lParam;
-
-		if (!g_Window.isOpen)
-			return CallNextHookEx(hKeyboardHook, nCode, wParam, lParam);
-
 		switch (wParam)
 		{
 		case WM_SYSKEYDOWN:

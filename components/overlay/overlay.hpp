@@ -1,7 +1,9 @@
+// https://github.com/nertigel/StealthOverlay
 #pragma once
 #include <Windows.h>
 #include <d3d11.h>
 #include <tchar.h>
+
 #include "components/imgui/imgui.h"
 #include "components/imgui/imgui_impl_win32.h"
 #include "components/imgui/imgui_impl_dx11.h"
@@ -11,7 +13,6 @@
 #pragma comment(lib, "d3dcompiler.lib")
 
 #include "components/globals.hpp"
-
 
 class Overlay {
 private:

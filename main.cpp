@@ -1,7 +1,9 @@
+// https://github.com/nertigel/StealthOverlay
 // Licensed under CC BY-NC-ND 4.0: https://creativecommons.org/licenses/by-nc-nd/4.0/
 // © 2025 Nertigel. All rights reserved.
 
 #include <iostream>
+
 #include "components/overlay/overlay.hpp"
 #include "components/hooks/keyboard.hpp"
 

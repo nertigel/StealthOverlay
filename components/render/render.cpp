@@ -1,22 +1,59 @@
+// https://github.com/nertigel/StealthOverlay
 #include <stdlib.h>
 
 #include "styles.hpp"
 #include "render.hpp"
 #include <components/security/xorstr.hpp>
 
+bool test_checkbox = false;
+bool test_checkbox2 = true;
+int itest_slider = 1337;
+float test_slider = 199.99;
+static ImVec4 accent_color = ImVec4(1.00f, 0.85f, 0.10f, 1.00f);
+
 void render_module::start() {
-    set_theme();
+    set_theme(accent_color);
 
-    ImGui::Begin(xorstr_("Stealth overlay"));
-    ImGui::Text(xorstr_("This is your overlay."));
+    ImGui::SetNextWindowSize(ImVec2(500, 300));
 
-    if (ImGui::Button(xorstr_("Unload"))) {
-        exit(1);
+    ImGui::Begin(xorstr_("StealthOverlay"), 0, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoSavedSettings);
+
+    if (ImGui::BeginTabBar(xorstr_("tab_bar"))) {
+        if (ImGui::BeginTabItem(xorstr_("Tab 1"))) {
+            ImGui::Text(xorstr_("Text label"));
+
+            ImGui::Checkbox(xorstr_("Checkbox"), &test_checkbox);
+            ImGui::SameLine();
+            ImGui::Checkbox(xorstr_("Checkbox 2"), &test_checkbox2);
+
+            ImGui::SliderInt(xorstr_("iSlider"), &itest_slider, 1100, 10000);
+            ImGui::SliderFloat(xorstr_("fSlider"), &test_slider, 0, 400);
+
+            ImGui::ColorEdit3(xorstr_("Accent color picker"), (float*)&accent_color, ImGuiColorEditFlags_AlphaBar | ImGuiColorEditFlags_NoInputs);
+
+            ImGui::Button(xorstr_("Button"));
+            ImGui::SameLine();
+            ImGui::Button(xorstr_("Button sized"), ImVec2(300, 0));
+
+            ImGui::EndTabItem();
+        }
+
+        if (ImGui::BeginTabItem(xorstr_("Tab 2"))) {
+            ImGui::Text(xorstr_("This is the content of Tab 2."));
+            ImGui::EndTabItem();
+        }
+
+        if (ImGui::BeginTabItem(xorstr_("Unload"))) {
+            exit(1);
+            ImGui::EndTabItem();
+        }
+
+        ImGui::EndTabBar();
     }
 
     ImGui::End();
 }
 
-void render_module::set_theme() {
-    set_imgui_theme();
+void render_module::set_theme(ImVec4 accent_color) {
+    set_imgui_theme(accent_color);
 }

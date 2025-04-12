@@ -1,3 +1,4 @@
+// https://github.com/nertigel/StealthOverlay
 #pragma once
 #include <string>
 
