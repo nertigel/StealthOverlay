@@ -9,7 +9,7 @@ Includes full project files for easier compilation of the executable.
 
 # Features
 - Streamproof, not visible in screenshots and screen recorders such as OBS, Medal & more
-- Draws over any application, thanks to `uiaccess`
+- Draws on top of any application/game, thanks to `uiaccess`
 - FreeType font support, comes with [Pixeloid](https://www.dafont.com/pixeloid-sans.font)
 
 # Libraries
