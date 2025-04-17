@@ -9,7 +9,8 @@ Includes full project files for easier compilation of the executable.
 
 # Features
 - Streamproof, not visible in screenshots and screen recorders such as OBS, Medal & more
-- Draws over any games/application, thanks to `uiaccess`
+- Draws over any application, thanks to `uiaccess`
+- FreeType font support, comes with [Pixeloid](https://www.dafont.com/pixeloid-sans.font)
 
 # Libraries
 - ImGui ([imgui-1.91.9b](https://github.com/ocornut/imgui/tree/v1.91.9b))
