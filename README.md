@@ -3,7 +3,7 @@
 ![cppi](https://img.shields.io/github/languages/top/nertigel/StealthOverlay) ![Windows](https://img.shields.io/badge/Windows-11-cyan) ![dx11](https://img.shields.io/badge/DirectX-11-red)
 
 ### StealthOverlay is a lightweight and stealthy ImGui-based overlay using DirectX 11.
-It's an ideal base for building external tools or GUI-driven utilities that require drawing over other applications, including games.
+An ideal base for building external tools or GUI-driven utilities that require drawing over other applications, including games.
 ##### Full project files are included for quick setup and seamless compilation.
 
 ![demo](image.png)
