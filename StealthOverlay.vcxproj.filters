@@ -48,6 +48,9 @@
     <ClCompile Include="components\render\render.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="components\imgui\imgui_freetype.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="components\ui_access\ui_access.hpp">
@@ -83,9 +86,6 @@
     <ClInclude Include="components\overlay\overlay.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="components\hooks\keyboard.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="components\render\styles.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -93,6 +93,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="components\security\xorstr.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="components\render\fonts.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="components\imgui\imgui_freetype.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -61,6 +61,6 @@ void set_imgui_theme(ImVec4 accent_color)
     style.TabRounding = 2.0f;
 
     style.WindowPadding = ImVec2(10, 10);
-    style.FramePadding = ImVec2(8, 4);
+    style.FramePadding = ImVec2(8, 2);
     style.ItemSpacing = ImVec2(8, 6);
 }
