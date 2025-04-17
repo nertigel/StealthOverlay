@@ -127,6 +127,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)components/imgui/freetype/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -134,7 +135,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>d3dx9.lib
-;d3d9.lib;d3d11.lib;%(AdditionalDependencies)</AdditionalDependencies>
+;d3d9.lib;d3d11.lib;$(SolutionDir)components/imgui/freetype/win64/freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
       <UACUIAccess>false</UACUIAccess>
     </Link>
@@ -143,6 +144,7 @@
     <ClCompile Include="components\imgui\imgui.cpp" />
     <ClCompile Include="components\imgui\imgui_demo.cpp" />
     <ClCompile Include="components\imgui\imgui_draw.cpp" />
+    <ClCompile Include="components\imgui\imgui_freetype.cpp" />
     <ClCompile Include="components\imgui\imgui_impl_dx11.cpp" />
     <ClCompile Include="components\imgui\imgui_impl_win32.cpp" />
     <ClCompile Include="components\imgui\imgui_tables.cpp" />
@@ -154,9 +156,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="components\globals.hpp" />
-    <ClInclude Include="components\hooks\keyboard.hpp" />
     <ClInclude Include="components\imgui\imconfig.h" />
     <ClInclude Include="components\imgui\imgui.h" />
+    <ClInclude Include="components\imgui\imgui_freetype.h" />
     <ClInclude Include="components\imgui\imgui_impl_dx11.h" />
     <ClInclude Include="components\imgui\imgui_impl_win32.h" />
     <ClInclude Include="components\imgui\imgui_internal.h" />
@@ -164,6 +166,7 @@
     <ClInclude Include="components\imgui\imstb_textedit.h" />
     <ClInclude Include="components\imgui\imstb_truetype.h" />
     <ClInclude Include="components\overlay\overlay.hpp" />
+    <ClInclude Include="components\render\fonts.hpp" />
     <ClInclude Include="components\render\render.hpp" />
     <ClInclude Include="components\render\styles.hpp" />
     <ClInclude Include="components\security\xorstr.hpp" />

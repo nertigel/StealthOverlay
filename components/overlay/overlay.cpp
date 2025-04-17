@@ -6,6 +6,8 @@
 #include <components/render/render.hpp>
 #include <components/security/xorstr.hpp>
 #include <dwmapi.h>
+#include <components/imgui/imgui_freetype.h>
+#include "../render/fonts.hpp"
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 typedef HWND(WINAPI* CreateWindowInBand)(_In_ DWORD dwExStyle, _In_opt_ ATOM atom, _In_opt_ LPCWSTR lpWindowName, _In_ DWORD dwStyle, _In_ int X, _In_ int Y, _In_ int nWidth, _In_ int nHeight, _In_opt_ HWND hWndParent, _In_opt_ HMENU hMenu, _In_opt_ HINSTANCE hInstance, _In_opt_ LPVOID lpParam, DWORD band);
@@ -129,12 +131,19 @@ void Overlay::setup_window()
     //SetWindowLong(g_Window.hWnd, GWL_EXSTYLE, WS_EX_TOPMOST | WS_EX_TRANSPARENT | WS_EX_NOACTIVATE);
 
 }
+ImFont* d_PixelFont;
 
 void Overlay::begin_render() {
     // Initialize ImGui
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
     ImGui::StyleColorsClassic();
+
+    ImFontConfig Cfg;
+    Cfg.FontBuilderFlags = ImGuiFreeTypeBuilderFlags_ForceAutoHint | ImGuiFreeTypeBuilderFlags_LightHinting | ImGuiFreeTypeBuilderFlags_LoadColor;
+    Cfg.FontDataOwnedByAtlas = false;
+
+    d_PixelFont = io.Fonts->AddFontFromMemoryTTF(pix_font, sizeof(pix_font), 14.f, &Cfg, io.Fonts->GetGlyphRangesCyrillic());
 
     ImGui_ImplWin32_Init(g_Window.hWnd);
     ImGui_ImplDX11_Init(g_pd3dDevice, g_pd3dDeviceContext);
