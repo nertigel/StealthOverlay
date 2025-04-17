@@ -2,21 +2,23 @@
 # StealthOverlay - D3D11 ImGui overlay
 ![cppi](https://img.shields.io/github/languages/top/nertigel/StealthOverlay) ![Windows](https://img.shields.io/badge/Windows-11-cyan) ![dx11](https://img.shields.io/badge/DirectX-11-red)
 
-A stealthy C++ ImGui menu overlay - a great base for externals or various tools that require a graphical interface.
-Includes full project files for easier compilation of the executable.
+### StealthOverlay is a lightweight and stealthy ImGui-based overlay using DirectX 11.
+It's an ideal base for building external tools or GUI-driven utilities that require drawing over other applications, including games.
+##### Full project files are included for quick setup and seamless compilation.
 
 ![demo](image.png)
 
-# Features
-- Streamproof, not visible in screenshots and screen recorders such as OBS, Medal & more
-- Draws on top of any application/game, thanks to `uiaccess`
-- FreeType font support, comes with [Pixeloid](https://www.dafont.com/pixeloid-sans.font)
+# ✨ Features
+- 🔒 Streamproof — Invisible in OBS, Medal, and most screen capture software
+- 🎹 Keyboard Hook — Basic hook for global keystroke listening
+- 🖼️ Universal Overlay — Draws on top of any window or game (leveraging uiaccess)
+- 🔤 Custom Font Support — FreeType-enabled with [Pixeloid](https://www.dafont.com/pixeloid-sans.font) included
 
-# Libraries
-- ImGui ([imgui-1.91.9b](https://github.com/ocornut/imgui/tree/v1.91.9b))
-- [DirectX Software Development Kit](https://www.microsoft.com/en-us/download/details.aspx?id=6812)
+# 📦 Built With
+- [ImGui-1.91.9b](https://github.com/ocornut/imgui/tree/v1.91.9b)
+- [DirectX SDK June 2010](https://www.microsoft.com/en-us/download/details.aspx?id=6812)
 - DirectX11
 
-# Credits
+# 🧠 Credits
 - killtimer0 - [uiaccess](https://github.com/killtimer0/uiaccess)
 - JustasMasiulis - [xorstr](https://github.com/JustasMasiulis/xorstr)
